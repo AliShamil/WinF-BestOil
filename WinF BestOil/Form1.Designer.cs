@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.num_Per_Cost = new System.Windows.Forms.NumericUpDown();
+            this.num_Per_Liter = new System.Windows.Forms.NumericUpDown();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -37,8 +39,6 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.rdb_PerCost = new System.Windows.Forms.RadioButton();
             this.rdb_PerLiter = new System.Windows.Forms.RadioButton();
-            this.txt_Per_Cost = new System.Windows.Forms.TextBox();
-            this.txt_Per_Liter = new System.Windows.Forms.TextBox();
             this.txt_Fuel_Price = new System.Windows.Forms.TextBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.gb_Fuel_Total = new System.Windows.Forms.GroupBox();
@@ -50,6 +50,10 @@
             this.label11 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.num_Cola = new System.Windows.Forms.NumericUpDown();
+            this.num_Pizza = new System.Windows.Forms.NumericUpDown();
+            this.num_hamburger = new System.Windows.Forms.NumericUpDown();
+            this.num_hotdog = new System.Windows.Forms.NumericUpDown();
             this.label13 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.chk_Cola = new System.Windows.Forms.CheckBox();
@@ -57,35 +61,37 @@
             this.chk_Hamburger = new System.Windows.Forms.CheckBox();
             this.chk_Hot_Dog = new System.Windows.Forms.CheckBox();
             this.textBox10 = new System.Windows.Forms.TextBox();
-            this.textBox11 = new System.Windows.Forms.TextBox();
             this.textBox7 = new System.Windows.Forms.TextBox();
             this.textBox8 = new System.Windows.Forms.TextBox();
             this.textBox9 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
             this.gb_Cafe_Total = new System.Windows.Forms.GroupBox();
             this.label8 = new System.Windows.Forms.Label();
             this.lbl_Cafe_Total = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.num_Per_Cost)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.num_Per_Liter)).BeginInit();
             this.panel1.SuspendLayout();
             this.gb_Fuel_Total.SuspendLayout();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.num_Cola)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.num_Pizza)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.num_hamburger)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.num_hotdog)).BeginInit();
             this.gb_Cafe_Total.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.num_Per_Cost);
+            this.groupBox1.Controls.Add(this.num_Per_Liter);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.lbl_FuelType);
             this.groupBox1.Controls.Add(this.panel1);
-            this.groupBox1.Controls.Add(this.txt_Per_Cost);
-            this.groupBox1.Controls.Add(this.txt_Per_Liter);
             this.groupBox1.Controls.Add(this.txt_Fuel_Price);
             this.groupBox1.Controls.Add(this.comboBox1);
             this.groupBox1.Controls.Add(this.gb_Fuel_Total);
@@ -95,6 +101,29 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Fuel Station";
+            // 
+            // num_Per_Cost
+            // 
+            this.num_Per_Cost.DecimalPlaces = 2;
+            this.num_Per_Cost.Enabled = false;
+            this.num_Per_Cost.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.num_Per_Cost.InterceptArrowKeys = false;
+            this.num_Per_Cost.Location = new System.Drawing.Point(155, 223);
+            this.num_Per_Cost.Name = "num_Per_Cost";
+            this.num_Per_Cost.Size = new System.Drawing.Size(82, 23);
+            this.num_Per_Cost.TabIndex = 16;
+            this.num_Per_Cost.ValueChanged += new System.EventHandler(this.num_Per_Cost_ValueChanged);
+            // 
+            // num_Per_Liter
+            // 
+            this.num_Per_Liter.DecimalPlaces = 2;
+            this.num_Per_Liter.Enabled = false;
+            this.num_Per_Liter.InterceptArrowKeys = false;
+            this.num_Per_Liter.Location = new System.Drawing.Point(155, 182);
+            this.num_Per_Liter.Name = "num_Per_Liter";
+            this.num_Per_Liter.Size = new System.Drawing.Size(82, 23);
+            this.num_Per_Liter.TabIndex = 15;
+            this.num_Per_Liter.ValueChanged += new System.EventHandler(this.num_Per_Liter_ValueChanged);
             // 
             // label5
             // 
@@ -158,6 +187,7 @@
             this.rdb_PerCost.Size = new System.Drawing.Size(69, 19);
             this.rdb_PerCost.TabIndex = 1;
             this.rdb_PerCost.TabStop = true;
+            this.rdb_PerCost.Tag = "cost";
             this.rdb_PerCost.Text = "Per Cost";
             this.rdb_PerCost.UseVisualStyleBackColor = true;
             // 
@@ -169,28 +199,16 @@
             this.rdb_PerLiter.Size = new System.Drawing.Size(68, 19);
             this.rdb_PerLiter.TabIndex = 0;
             this.rdb_PerLiter.TabStop = true;
+            this.rdb_PerLiter.Tag = "liter";
             this.rdb_PerLiter.Text = "Per Liter";
             this.rdb_PerLiter.UseVisualStyleBackColor = true;
             this.rdb_PerLiter.CheckedChanged += new System.EventHandler(this.rdb_PerLiter_CheckedChanged);
-            // 
-            // txt_Per_Cost
-            // 
-            this.txt_Per_Cost.Location = new System.Drawing.Point(155, 220);
-            this.txt_Per_Cost.Name = "txt_Per_Cost";
-            this.txt_Per_Cost.Size = new System.Drawing.Size(80, 23);
-            this.txt_Per_Cost.TabIndex = 8;
-            // 
-            // txt_Per_Liter
-            // 
-            this.txt_Per_Liter.Location = new System.Drawing.Point(155, 182);
-            this.txt_Per_Liter.Name = "txt_Per_Liter";
-            this.txt_Per_Liter.Size = new System.Drawing.Size(80, 23);
-            this.txt_Per_Liter.TabIndex = 7;
             // 
             // txt_Fuel_Price
             // 
             this.txt_Fuel_Price.Location = new System.Drawing.Point(114, 92);
             this.txt_Fuel_Price.Name = "txt_Fuel_Price";
+            this.txt_Fuel_Price.ReadOnly = true;
             this.txt_Fuel_Price.Size = new System.Drawing.Size(121, 23);
             this.txt_Fuel_Price.TabIndex = 6;
             // 
@@ -246,7 +264,7 @@
             this.groupBox3.Size = new System.Drawing.Size(639, 116);
             this.groupBox3.TabIndex = 2;
             this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "groupBox3";
+            this.groupBox3.Text = "Total Cost";
             // 
             // button1
             // 
@@ -290,6 +308,10 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.num_Cola);
+            this.groupBox2.Controls.Add(this.num_Pizza);
+            this.groupBox2.Controls.Add(this.num_hamburger);
+            this.groupBox2.Controls.Add(this.num_hotdog);
             this.groupBox2.Controls.Add(this.label13);
             this.groupBox2.Controls.Add(this.label12);
             this.groupBox2.Controls.Add(this.chk_Cola);
@@ -297,13 +319,9 @@
             this.groupBox2.Controls.Add(this.chk_Hamburger);
             this.groupBox2.Controls.Add(this.chk_Hot_Dog);
             this.groupBox2.Controls.Add(this.textBox10);
-            this.groupBox2.Controls.Add(this.textBox11);
             this.groupBox2.Controls.Add(this.textBox7);
             this.groupBox2.Controls.Add(this.textBox8);
             this.groupBox2.Controls.Add(this.textBox9);
-            this.groupBox2.Controls.Add(this.textBox4);
-            this.groupBox2.Controls.Add(this.textBox5);
-            this.groupBox2.Controls.Add(this.textBox6);
             this.groupBox2.Controls.Add(this.gb_Cafe_Total);
             this.groupBox2.Location = new System.Drawing.Point(361, 27);
             this.groupBox2.Name = "groupBox2";
@@ -311,6 +329,42 @@
             this.groupBox2.TabIndex = 3;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Mini - Cafe";
+            // 
+            // num_Cola
+            // 
+            this.num_Cola.Enabled = false;
+            this.num_Cola.InterceptArrowKeys = false;
+            this.num_Cola.Location = new System.Drawing.Point(221, 185);
+            this.num_Cola.Name = "num_Cola";
+            this.num_Cola.Size = new System.Drawing.Size(53, 23);
+            this.num_Cola.TabIndex = 26;
+            // 
+            // num_Pizza
+            // 
+            this.num_Pizza.Enabled = false;
+            this.num_Pizza.InterceptArrowKeys = false;
+            this.num_Pizza.Location = new System.Drawing.Point(221, 142);
+            this.num_Pizza.Name = "num_Pizza";
+            this.num_Pizza.Size = new System.Drawing.Size(53, 23);
+            this.num_Pizza.TabIndex = 25;
+            // 
+            // num_hamburger
+            // 
+            this.num_hamburger.Enabled = false;
+            this.num_hamburger.InterceptArrowKeys = false;
+            this.num_hamburger.Location = new System.Drawing.Point(220, 96);
+            this.num_hamburger.Name = "num_hamburger";
+            this.num_hamburger.Size = new System.Drawing.Size(53, 23);
+            this.num_hamburger.TabIndex = 24;
+            // 
+            // num_hotdog
+            // 
+            this.num_hotdog.Enabled = false;
+            this.num_hotdog.InterceptArrowKeys = false;
+            this.num_hotdog.Location = new System.Drawing.Point(221, 53);
+            this.num_hotdog.Name = "num_hotdog";
+            this.num_hotdog.Size = new System.Drawing.Size(53, 23);
+            this.num_hotdog.TabIndex = 23;
             // 
             // label13
             // 
@@ -367,64 +421,46 @@
             this.chk_Hot_Dog.Name = "chk_Hot_Dog";
             this.chk_Hot_Dog.Size = new System.Drawing.Size(79, 19);
             this.chk_Hot_Dog.TabIndex = 17;
+            this.chk_Hot_Dog.Tag = "";
             this.chk_Hot_Dog.Text = "Hot - Dog";
             this.chk_Hot_Dog.UseVisualStyleBackColor = true;
+            this.chk_Hot_Dog.CheckedChanged += new System.EventHandler(this.chk_Hot_Dog_CheckedChanged);
             // 
             // textBox10
             // 
             this.textBox10.Location = new System.Drawing.Point(137, 185);
             this.textBox10.Name = "textBox10";
+            this.textBox10.ReadOnly = true;
             this.textBox10.Size = new System.Drawing.Size(54, 23);
             this.textBox10.TabIndex = 16;
-            // 
-            // textBox11
-            // 
-            this.textBox11.Location = new System.Drawing.Point(220, 185);
-            this.textBox11.Name = "textBox11";
-            this.textBox11.Size = new System.Drawing.Size(54, 23);
-            this.textBox11.TabIndex = 15;
+            this.textBox10.Text = "2.00";
             // 
             // textBox7
             // 
             this.textBox7.Location = new System.Drawing.Point(137, 141);
             this.textBox7.Name = "textBox7";
+            this.textBox7.ReadOnly = true;
             this.textBox7.Size = new System.Drawing.Size(54, 23);
             this.textBox7.TabIndex = 14;
+            this.textBox7.Text = "11.50";
             // 
             // textBox8
             // 
             this.textBox8.Location = new System.Drawing.Point(137, 97);
             this.textBox8.Name = "textBox8";
+            this.textBox8.ReadOnly = true;
             this.textBox8.Size = new System.Drawing.Size(54, 23);
             this.textBox8.TabIndex = 13;
+            this.textBox8.Text = "4.00";
             // 
             // textBox9
             // 
             this.textBox9.Location = new System.Drawing.Point(137, 53);
             this.textBox9.Name = "textBox9";
+            this.textBox9.ReadOnly = true;
             this.textBox9.Size = new System.Drawing.Size(54, 23);
             this.textBox9.TabIndex = 12;
-            // 
-            // textBox4
-            // 
-            this.textBox4.Location = new System.Drawing.Point(220, 140);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(54, 23);
-            this.textBox4.TabIndex = 11;
-            // 
-            // textBox5
-            // 
-            this.textBox5.Location = new System.Drawing.Point(220, 96);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(54, 23);
-            this.textBox5.TabIndex = 10;
-            // 
-            // textBox6
-            // 
-            this.textBox6.Location = new System.Drawing.Point(220, 52);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(54, 23);
-            this.textBox6.TabIndex = 9;
+            this.textBox9.Text = "3.70";
             // 
             // gb_Cafe_Total
             // 
@@ -470,6 +506,8 @@
             this.Load += new System.EventHandler(this.Form1_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.num_Per_Cost)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.num_Per_Liter)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.gb_Fuel_Total.ResumeLayout(false);
@@ -479,6 +517,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.num_Cola)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.num_Pizza)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.num_hamburger)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.num_hotdog)).EndInit();
             this.gb_Cafe_Total.ResumeLayout(false);
             this.gb_Cafe_Total.PerformLayout();
             this.ResumeLayout(false);
@@ -496,8 +538,6 @@
         private Panel panel1;
         private RadioButton rdb_PerCost;
         private RadioButton rdb_PerLiter;
-        private TextBox txt_Per_Cost;
-        private TextBox txt_Per_Liter;
         private TextBox txt_Fuel_Price;
         private ComboBox comboBox1;
         private GroupBox gb_Fuel_Total;
@@ -516,15 +556,17 @@
         private CheckBox chk_Hamburger;
         private CheckBox chk_Hot_Dog;
         private TextBox textBox10;
-        private TextBox textBox11;
         private TextBox textBox7;
         private TextBox textBox8;
         private TextBox textBox9;
-        private TextBox textBox4;
-        private TextBox textBox5;
-        private TextBox textBox6;
         private GroupBox gb_Cafe_Total;
         private Label label8;
         private Label lbl_Cafe_Total;
+        private NumericUpDown num_Per_Liter;
+        private NumericUpDown num_Per_Cost;
+        private NumericUpDown num_Cola;
+        private NumericUpDown num_Pizza;
+        private NumericUpDown num_hamburger;
+        private NumericUpDown num_hotdog;
     }
 }
