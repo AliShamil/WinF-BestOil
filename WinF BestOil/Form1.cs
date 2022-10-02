@@ -1,3 +1,4 @@
+using System;
 using System.Diagnostics;
 using System.Runtime.Intrinsics.Arm;
 
@@ -5,6 +6,7 @@ namespace WinF_BestOil
 {
     public partial class Form1 : Form
     {
+        public decimal TotalCafe { get; set; }
         public Form1()
         {
             InitializeComponent();
@@ -50,7 +52,7 @@ namespace WinF_BestOil
             }
             else
             {
-               
+
                 num_Per_Cost.Enabled = true;
                 num_Per_Liter.Enabled = false;
                 num_Per_Liter.Value = 0;
@@ -60,7 +62,7 @@ namespace WinF_BestOil
 
 
 
-           
+
 
 
 
@@ -84,20 +86,55 @@ namespace WinF_BestOil
             if (comboBox1.SelectedItem is null)
                 return;
             Fuel currentFuel = (Fuel)comboBox1.SelectedItem;
-            
+
             lbl_Fuel_Total.Text = Math.Round(num_Per_Cost.Value).ToString();
 
         }
 
+          
         private void chk_Hot_Dog_CheckedChanged(object sender, EventArgs e)
         {
-            //foreach (Control control in gb_Cafe_Total.Controls)
-            //{
-            //    if (control is NumericUpDown nup && nup.Tag == chk_Hamburger.Tag.ToString())
-            //        nup.Enabled = true;
+            if ((sender as CheckBox).Checked)
+            {
+                foreach (Control control in (sender as CheckBox).Parent.Controls)
+                {
+                    if (control is NumericUpDown num)
+                    {
+                        num.Enabled = true;
+                    }
 
-            //}
-            MessageBox.Show(this.Tag.ToString());
+
+                }
+
+            }
+            else
+            {
+                foreach (Control control in (sender as CheckBox).Parent.Controls)
+                {
+                    if (control is NumericUpDown num)
+                    {
+                        num.Enabled = false;
+                      
+                    }
+                }
+
+            }
+            lbl_Cafe_Total.Text = TotalCafe.ToString(); 
+
+        }
+        private void num_Cafe_ValueChanged(object sender, EventArgs e)
+        {
+           
+
+            
+
+        }
+
+        private void num_hotdog_ValueChanged(object sender, EventArgs e)
+        {
+            
+
+            lbl_Cafe_Total.Text =((double)((decimal.Parse(HamPrice.Text) * num_hamburger.Value) + (decimal.Parse(HotDogPrice.Text) * num_hotdog.Value) + (decimal.Parse(PizzaPrice.Text) * num_Pizza.Value) + (decimal.Parse(ColaPrice.Text) * num_Cola.Value))).ToString();
         }
     }
 }

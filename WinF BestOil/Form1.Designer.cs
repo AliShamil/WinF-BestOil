@@ -50,20 +50,24 @@
             this.label11 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.chk_Cola = new System.Windows.Forms.CheckBox();
+            this.ColaPrice = new System.Windows.Forms.TextBox();
             this.num_Cola = new System.Windows.Forms.NumericUpDown();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.chk_Pizza = new System.Windows.Forms.CheckBox();
+            this.PizzaPrice = new System.Windows.Forms.TextBox();
             this.num_Pizza = new System.Windows.Forms.NumericUpDown();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.chk_Hamburger = new System.Windows.Forms.CheckBox();
+            this.HamPrice = new System.Windows.Forms.TextBox();
             this.num_hamburger = new System.Windows.Forms.NumericUpDown();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.HotDogPrice = new System.Windows.Forms.TextBox();
+            this.chk_Hot_Dog = new System.Windows.Forms.CheckBox();
             this.num_hotdog = new System.Windows.Forms.NumericUpDown();
             this.label13 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
-            this.chk_Cola = new System.Windows.Forms.CheckBox();
-            this.chk_Pizza = new System.Windows.Forms.CheckBox();
-            this.chk_Hamburger = new System.Windows.Forms.CheckBox();
-            this.chk_Hot_Dog = new System.Windows.Forms.CheckBox();
-            this.textBox10 = new System.Windows.Forms.TextBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.textBox9 = new System.Windows.Forms.TextBox();
             this.gb_Cafe_Total = new System.Windows.Forms.GroupBox();
             this.label8 = new System.Windows.Forms.Label();
             this.lbl_Cafe_Total = new System.Windows.Forms.Label();
@@ -75,9 +79,13 @@
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox2.SuspendLayout();
+            this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.num_Cola)).BeginInit();
+            this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.num_Pizza)).BeginInit();
+            this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.num_hamburger)).BeginInit();
+            this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.num_hotdog)).BeginInit();
             this.gb_Cafe_Total.SuspendLayout();
             this.SuspendLayout();
@@ -308,20 +316,12 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.num_Cola);
-            this.groupBox2.Controls.Add(this.num_Pizza);
-            this.groupBox2.Controls.Add(this.num_hamburger);
-            this.groupBox2.Controls.Add(this.num_hotdog);
+            this.groupBox2.Controls.Add(this.panel3);
+            this.groupBox2.Controls.Add(this.panel4);
+            this.groupBox2.Controls.Add(this.panel5);
+            this.groupBox2.Controls.Add(this.panel2);
             this.groupBox2.Controls.Add(this.label13);
             this.groupBox2.Controls.Add(this.label12);
-            this.groupBox2.Controls.Add(this.chk_Cola);
-            this.groupBox2.Controls.Add(this.chk_Pizza);
-            this.groupBox2.Controls.Add(this.chk_Hamburger);
-            this.groupBox2.Controls.Add(this.chk_Hot_Dog);
-            this.groupBox2.Controls.Add(this.textBox10);
-            this.groupBox2.Controls.Add(this.textBox7);
-            this.groupBox2.Controls.Add(this.textBox8);
-            this.groupBox2.Controls.Add(this.textBox9);
             this.groupBox2.Controls.Add(this.gb_Cafe_Total);
             this.groupBox2.Location = new System.Drawing.Point(361, 27);
             this.groupBox2.Name = "groupBox2";
@@ -330,41 +330,163 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Mini - Cafe";
             // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.chk_Cola);
+            this.panel3.Controls.Add(this.ColaPrice);
+            this.panel3.Controls.Add(this.num_Cola);
+            this.panel3.Location = new System.Drawing.Point(28, 182);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(249, 27);
+            this.panel3.TabIndex = 28;
+            // 
+            // chk_Cola
+            // 
+            this.chk_Cola.AutoSize = true;
+            this.chk_Cola.Location = new System.Drawing.Point(4, 4);
+            this.chk_Cola.Name = "chk_Cola";
+            this.chk_Cola.Size = new System.Drawing.Size(88, 19);
+            this.chk_Cola.TabIndex = 20;
+            this.chk_Cola.Text = "Coca - Cola";
+            this.chk_Cola.UseVisualStyleBackColor = true;
+            this.chk_Cola.CheckedChanged += new System.EventHandler(this.chk_Hot_Dog_CheckedChanged);
+            // 
+            // ColaPrice
+            // 
+            this.ColaPrice.Location = new System.Drawing.Point(109, 2);
+            this.ColaPrice.Name = "ColaPrice";
+            this.ColaPrice.ReadOnly = true;
+            this.ColaPrice.Size = new System.Drawing.Size(54, 23);
+            this.ColaPrice.TabIndex = 16;
+            this.ColaPrice.Text = "2.00";
+            // 
             // num_Cola
             // 
             this.num_Cola.Enabled = false;
             this.num_Cola.InterceptArrowKeys = false;
-            this.num_Cola.Location = new System.Drawing.Point(221, 185);
+            this.num_Cola.Location = new System.Drawing.Point(193, 0);
             this.num_Cola.Name = "num_Cola";
             this.num_Cola.Size = new System.Drawing.Size(53, 23);
             this.num_Cola.TabIndex = 26;
+            // 
+            // panel4
+            // 
+            this.panel4.Controls.Add(this.chk_Pizza);
+            this.panel4.Controls.Add(this.PizzaPrice);
+            this.panel4.Controls.Add(this.num_Pizza);
+            this.panel4.Location = new System.Drawing.Point(28, 141);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(245, 27);
+            this.panel4.TabIndex = 29;
+            // 
+            // chk_Pizza
+            // 
+            this.chk_Pizza.AutoSize = true;
+            this.chk_Pizza.Location = new System.Drawing.Point(4, 4);
+            this.chk_Pizza.Name = "chk_Pizza";
+            this.chk_Pizza.Size = new System.Drawing.Size(52, 19);
+            this.chk_Pizza.TabIndex = 19;
+            this.chk_Pizza.Text = "Pizza";
+            this.chk_Pizza.UseVisualStyleBackColor = true;
+            this.chk_Pizza.CheckedChanged += new System.EventHandler(this.chk_Hot_Dog_CheckedChanged);
+            // 
+            // PizzaPrice
+            // 
+            this.PizzaPrice.Location = new System.Drawing.Point(109, 1);
+            this.PizzaPrice.Name = "PizzaPrice";
+            this.PizzaPrice.ReadOnly = true;
+            this.PizzaPrice.Size = new System.Drawing.Size(54, 23);
+            this.PizzaPrice.TabIndex = 14;
+            this.PizzaPrice.Text = "11.50";
             // 
             // num_Pizza
             // 
             this.num_Pizza.Enabled = false;
             this.num_Pizza.InterceptArrowKeys = false;
-            this.num_Pizza.Location = new System.Drawing.Point(221, 142);
+            this.num_Pizza.Location = new System.Drawing.Point(193, 2);
             this.num_Pizza.Name = "num_Pizza";
             this.num_Pizza.Size = new System.Drawing.Size(53, 23);
             this.num_Pizza.TabIndex = 25;
+            // 
+            // panel5
+            // 
+            this.panel5.Controls.Add(this.chk_Hamburger);
+            this.panel5.Controls.Add(this.HamPrice);
+            this.panel5.Controls.Add(this.num_hamburger);
+            this.panel5.Location = new System.Drawing.Point(28, 97);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(245, 27);
+            this.panel5.TabIndex = 29;
+            // 
+            // chk_Hamburger
+            // 
+            this.chk_Hamburger.AutoSize = true;
+            this.chk_Hamburger.Location = new System.Drawing.Point(3, 5);
+            this.chk_Hamburger.Name = "chk_Hamburger";
+            this.chk_Hamburger.Size = new System.Drawing.Size(87, 19);
+            this.chk_Hamburger.TabIndex = 18;
+            this.chk_Hamburger.Text = "Hamburger";
+            this.chk_Hamburger.UseVisualStyleBackColor = true;
+            this.chk_Hamburger.CheckedChanged += new System.EventHandler(this.chk_Hot_Dog_CheckedChanged);
+            // 
+            // HamPrice
+            // 
+            this.HamPrice.Location = new System.Drawing.Point(108, 2);
+            this.HamPrice.Name = "HamPrice";
+            this.HamPrice.ReadOnly = true;
+            this.HamPrice.Size = new System.Drawing.Size(54, 23);
+            this.HamPrice.TabIndex = 13;
+            this.HamPrice.Text = "4.00";
             // 
             // num_hamburger
             // 
             this.num_hamburger.Enabled = false;
             this.num_hamburger.InterceptArrowKeys = false;
-            this.num_hamburger.Location = new System.Drawing.Point(220, 96);
+            this.num_hamburger.Location = new System.Drawing.Point(191, 1);
             this.num_hamburger.Name = "num_hamburger";
             this.num_hamburger.Size = new System.Drawing.Size(53, 23);
             this.num_hamburger.TabIndex = 24;
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.HotDogPrice);
+            this.panel2.Controls.Add(this.chk_Hot_Dog);
+            this.panel2.Controls.Add(this.num_hotdog);
+            this.panel2.Location = new System.Drawing.Point(28, 51);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(245, 27);
+            this.panel2.TabIndex = 27;
+            // 
+            // HotDogPrice
+            // 
+            this.HotDogPrice.Location = new System.Drawing.Point(109, 3);
+            this.HotDogPrice.Name = "HotDogPrice";
+            this.HotDogPrice.ReadOnly = true;
+            this.HotDogPrice.Size = new System.Drawing.Size(54, 23);
+            this.HotDogPrice.TabIndex = 12;
+            this.HotDogPrice.Text = "3.70";
+            // 
+            // chk_Hot_Dog
+            // 
+            this.chk_Hot_Dog.AutoSize = true;
+            this.chk_Hot_Dog.Location = new System.Drawing.Point(4, 7);
+            this.chk_Hot_Dog.Name = "chk_Hot_Dog";
+            this.chk_Hot_Dog.Size = new System.Drawing.Size(79, 19);
+            this.chk_Hot_Dog.TabIndex = 17;
+            this.chk_Hot_Dog.Tag = "";
+            this.chk_Hot_Dog.Text = "Hot - Dog";
+            this.chk_Hot_Dog.UseVisualStyleBackColor = true;
+            this.chk_Hot_Dog.CheckedChanged += new System.EventHandler(this.chk_Hot_Dog_CheckedChanged);
             // 
             // num_hotdog
             // 
             this.num_hotdog.Enabled = false;
             this.num_hotdog.InterceptArrowKeys = false;
-            this.num_hotdog.Location = new System.Drawing.Point(221, 53);
+            this.num_hotdog.Location = new System.Drawing.Point(193, 3);
             this.num_hotdog.Name = "num_hotdog";
             this.num_hotdog.Size = new System.Drawing.Size(53, 23);
             this.num_hotdog.TabIndex = 23;
+            this.num_hotdog.ValueChanged += new System.EventHandler(this.num_hotdog_ValueChanged);
             // 
             // label13
             // 
@@ -383,84 +505,6 @@
             this.label12.Size = new System.Drawing.Size(33, 15);
             this.label12.TabIndex = 21;
             this.label12.Text = "Price";
-            // 
-            // chk_Cola
-            // 
-            this.chk_Cola.AutoSize = true;
-            this.chk_Cola.Location = new System.Drawing.Point(32, 189);
-            this.chk_Cola.Name = "chk_Cola";
-            this.chk_Cola.Size = new System.Drawing.Size(88, 19);
-            this.chk_Cola.TabIndex = 20;
-            this.chk_Cola.Text = "Coca - Cola";
-            this.chk_Cola.UseVisualStyleBackColor = true;
-            // 
-            // chk_Pizza
-            // 
-            this.chk_Pizza.AutoSize = true;
-            this.chk_Pizza.Location = new System.Drawing.Point(32, 144);
-            this.chk_Pizza.Name = "chk_Pizza";
-            this.chk_Pizza.Size = new System.Drawing.Size(52, 19);
-            this.chk_Pizza.TabIndex = 19;
-            this.chk_Pizza.Text = "Pizza";
-            this.chk_Pizza.UseVisualStyleBackColor = true;
-            // 
-            // chk_Hamburger
-            // 
-            this.chk_Hamburger.AutoSize = true;
-            this.chk_Hamburger.Location = new System.Drawing.Point(32, 100);
-            this.chk_Hamburger.Name = "chk_Hamburger";
-            this.chk_Hamburger.Size = new System.Drawing.Size(87, 19);
-            this.chk_Hamburger.TabIndex = 18;
-            this.chk_Hamburger.Text = "Hamburger";
-            this.chk_Hamburger.UseVisualStyleBackColor = true;
-            // 
-            // chk_Hot_Dog
-            // 
-            this.chk_Hot_Dog.AutoSize = true;
-            this.chk_Hot_Dog.Location = new System.Drawing.Point(32, 57);
-            this.chk_Hot_Dog.Name = "chk_Hot_Dog";
-            this.chk_Hot_Dog.Size = new System.Drawing.Size(79, 19);
-            this.chk_Hot_Dog.TabIndex = 17;
-            this.chk_Hot_Dog.Tag = "";
-            this.chk_Hot_Dog.Text = "Hot - Dog";
-            this.chk_Hot_Dog.UseVisualStyleBackColor = true;
-            this.chk_Hot_Dog.CheckedChanged += new System.EventHandler(this.chk_Hot_Dog_CheckedChanged);
-            // 
-            // textBox10
-            // 
-            this.textBox10.Location = new System.Drawing.Point(137, 185);
-            this.textBox10.Name = "textBox10";
-            this.textBox10.ReadOnly = true;
-            this.textBox10.Size = new System.Drawing.Size(54, 23);
-            this.textBox10.TabIndex = 16;
-            this.textBox10.Text = "2.00";
-            // 
-            // textBox7
-            // 
-            this.textBox7.Location = new System.Drawing.Point(137, 141);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.ReadOnly = true;
-            this.textBox7.Size = new System.Drawing.Size(54, 23);
-            this.textBox7.TabIndex = 14;
-            this.textBox7.Text = "11.50";
-            // 
-            // textBox8
-            // 
-            this.textBox8.Location = new System.Drawing.Point(137, 97);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.ReadOnly = true;
-            this.textBox8.Size = new System.Drawing.Size(54, 23);
-            this.textBox8.TabIndex = 13;
-            this.textBox8.Text = "4.00";
-            // 
-            // textBox9
-            // 
-            this.textBox9.Location = new System.Drawing.Point(137, 53);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.ReadOnly = true;
-            this.textBox9.Size = new System.Drawing.Size(54, 23);
-            this.textBox9.TabIndex = 12;
-            this.textBox9.Text = "3.70";
             // 
             // gb_Cafe_Total
             // 
@@ -517,9 +561,17 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.num_Cola)).EndInit();
+            this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.num_Pizza)).EndInit();
+            this.panel5.ResumeLayout(false);
+            this.panel5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.num_hamburger)).EndInit();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.num_hotdog)).EndInit();
             this.gb_Cafe_Total.ResumeLayout(false);
             this.gb_Cafe_Total.PerformLayout();
@@ -555,10 +607,10 @@
         private CheckBox chk_Pizza;
         private CheckBox chk_Hamburger;
         private CheckBox chk_Hot_Dog;
-        private TextBox textBox10;
-        private TextBox textBox7;
-        private TextBox textBox8;
-        private TextBox textBox9;
+        private TextBox ColaPrice;
+        private TextBox PizzaPrice;
+        private TextBox HamPrice;
+        private TextBox HotDogPrice;
         private GroupBox gb_Cafe_Total;
         private Label label8;
         private Label lbl_Cafe_Total;
@@ -568,5 +620,9 @@
         private NumericUpDown num_Pizza;
         private NumericUpDown num_hamburger;
         private NumericUpDown num_hotdog;
+        private Panel panel2;
+        private Panel panel3;
+        private Panel panel4;
+        private Panel panel5;
     }
 }
