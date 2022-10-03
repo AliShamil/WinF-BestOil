@@ -47,7 +47,7 @@
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.button1 = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
+            this.lblTotal = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -260,12 +260,13 @@
             this.lbl_Fuel_Total.Size = new System.Drawing.Size(67, 31);
             this.lbl_Fuel_Total.TabIndex = 13;
             this.lbl_Fuel_Total.Text = "0.00";
+            this.lbl_Fuel_Total.TextChanged += new System.EventHandler(this.lbl_Fuel_Total_TextChanged);
             // 
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.button1);
             this.groupBox3.Controls.Add(this.label10);
-            this.groupBox3.Controls.Add(this.label11);
+            this.groupBox3.Controls.Add(this.lblTotal);
             this.groupBox3.Controls.Add(this.pictureBox1);
             this.groupBox3.Location = new System.Drawing.Point(12, 421);
             this.groupBox3.Name = "groupBox3";
@@ -283,6 +284,7 @@
             this.button1.TabIndex = 17;
             this.button1.Text = "Pay";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // label10
             // 
@@ -294,15 +296,15 @@
             this.label10.TabIndex = 16;
             this.label10.Text = "₼";
             // 
-            // label11
+            // lblTotal
             // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label11.Location = new System.Drawing.Point(442, 60);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(67, 31);
-            this.label11.TabIndex = 15;
-            this.label11.Text = "0.00";
+            this.lblTotal.AutoSize = true;
+            this.lblTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblTotal.Location = new System.Drawing.Point(442, 60);
+            this.lblTotal.Name = "lblTotal";
+            this.lblTotal.Size = new System.Drawing.Size(67, 31);
+            this.lblTotal.TabIndex = 15;
+            this.lblTotal.Text = "0.00";
             // 
             // pictureBox1
             // 
@@ -368,6 +370,7 @@
             this.num_Cola.Name = "num_Cola";
             this.num_Cola.Size = new System.Drawing.Size(53, 23);
             this.num_Cola.TabIndex = 26;
+            this.num_Cola.ValueChanged += new System.EventHandler(this.num_hotdog_ValueChanged);
             // 
             // panel4
             // 
@@ -407,6 +410,7 @@
             this.num_Pizza.Name = "num_Pizza";
             this.num_Pizza.Size = new System.Drawing.Size(53, 23);
             this.num_Pizza.TabIndex = 25;
+            this.num_Pizza.ValueChanged += new System.EventHandler(this.num_hotdog_ValueChanged);
             // 
             // panel5
             // 
@@ -446,6 +450,7 @@
             this.num_hamburger.Name = "num_hamburger";
             this.num_hamburger.Size = new System.Drawing.Size(53, 23);
             this.num_hamburger.TabIndex = 24;
+            this.num_hamburger.ValueChanged += new System.EventHandler(this.num_hotdog_ValueChanged);
             // 
             // panel2
             // 
@@ -536,6 +541,7 @@
             this.lbl_Cafe_Total.Size = new System.Drawing.Size(67, 31);
             this.lbl_Cafe_Total.TabIndex = 15;
             this.lbl_Cafe_Total.Text = "0.00";
+            this.lbl_Cafe_Total.TextChanged += new System.EventHandler(this.lbl_Fuel_Total_TextChanged);
             // 
             // Form1
             // 
@@ -598,7 +604,7 @@
         private GroupBox groupBox3;
         private Button button1;
         private Label label10;
-        private Label label11;
+        private Label lblTotal;
         private PictureBox pictureBox1;
         private GroupBox groupBox2;
         private Label label13;

@@ -1,12 +1,14 @@
-using System;
+﻿using System;
 using System.Diagnostics;
 using System.Runtime.Intrinsics.Arm;
+using System.Text;
 
 namespace WinF_BestOil
 {
     public partial class Form1 : Form
     {
         public decimal TotalCafe { get; set; }
+        
         public Form1()
         {
             InitializeComponent();
@@ -27,6 +29,7 @@ namespace WinF_BestOil
             comboBox1.Items.AddRange(FuelType.ToArray());
 
             comboBox1.DisplayMember = "Name";
+            
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -41,7 +44,7 @@ namespace WinF_BestOil
 
         private void rdb_PerLiter_CheckedChanged(object sender, EventArgs e)
         {
-
+            
 
 
             if (rdb_PerLiter.Checked)
@@ -94,6 +97,7 @@ namespace WinF_BestOil
           
         private void chk_Hot_Dog_CheckedChanged(object sender, EventArgs e)
         {
+            lbl_Cafe_Total.Text = ((num_hotdog.Value * 3.7m) + (num_hamburger.Value * 4m) + (num_Pizza.Value * 11.5m) + (num_Cola.Value * 2m)).ToString(); 
             if ((sender as CheckBox).Checked)
             {
                 foreach (Control control in (sender as CheckBox).Parent.Controls)
@@ -114,12 +118,13 @@ namespace WinF_BestOil
                     if (control is NumericUpDown num)
                     {
                         num.Enabled = false;
-                      
+                        num.Value = 0;
                     }
                 }
 
             }
-            lbl_Cafe_Total.Text = TotalCafe.ToString(); 
+
+            
 
         }
         private void num_Cafe_ValueChanged(object sender, EventArgs e)
@@ -132,9 +137,20 @@ namespace WinF_BestOil
 
         private void num_hotdog_ValueChanged(object sender, EventArgs e)
         {
-            
 
-            lbl_Cafe_Total.Text =((double)((decimal.Parse(HamPrice.Text) * num_hamburger.Value) + (decimal.Parse(HotDogPrice.Text) * num_hotdog.Value) + (decimal.Parse(PizzaPrice.Text) * num_Pizza.Value) + (decimal.Parse(ColaPrice.Text) * num_Cola.Value))).ToString();
+            lbl_Cafe_Total.Text = ((num_hotdog.Value * 3.7m) + (num_hamburger.Value * 4m) + (num_Pizza.Value * 11.5m) + (num_Cola.Value * 2m)).ToString();
+        }
+
+            private void lbl_Fuel_Total_TextChanged(object sender, EventArgs e)
+        {
+            lblTotal.Text = (double.Parse(lbl_Fuel_Total.Text) + double.Parse(lbl_Cafe_Total.Text)).ToString();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+
+            MessageBox.Show($@" - {lblTotal.Text} ₼");
         }
     }
 }
